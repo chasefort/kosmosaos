@@ -1,0 +1,62 @@
+<svg width="1400" height="880" viewBox="0 0 1400 880" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Kosmos Live Monitoring</title>
+  <desc id="desc">A dark observability interface showing live agent events, runtime traces, and local ingest status.</desc>
+  <rect width="1400" height="880" fill="#050712"/>
+  <radialGradient id="g" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(930 210) rotate(125) scale(720 520)">
+    <stop stop-color="#1D4ED8" stop-opacity=".44"/>
+    <stop offset=".52" stop-color="#7C3AED" stop-opacity=".16"/>
+    <stop offset="1" stop-color="#050712" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1400" height="880" fill="url(#g)"/>
+  <rect x="44" y="40" width="1312" height="800" rx="18" fill="#0A0A0A" stroke="rgba(255,255,255,.1)"/>
+  <rect x="44" y="40" width="220" height="800" rx="18" fill="#101014"/>
+  <text x="82" y="92" fill="#FFFFFF" font-family="Inter,Arial,sans-serif" font-size="32" font-weight="700">Kosmos</text>
+  <text x="82" y="128" fill="#A3A3A3" font-family="Inter,Arial,sans-serif" font-size="14">local runtime monitor</text>
+  <g font-family="Inter,Arial,sans-serif" font-size="15" font-weight="600">
+    <text x="84" y="192" fill="#60A5FA">Dashboard</text>
+    <text x="84" y="242" fill="#FFFFFF">Universe Map</text>
+    <text x="84" y="292" fill="#FFFFFF">Runs</text>
+    <text x="84" y="342" fill="#FFFFFF">Health</text>
+    <text x="84" y="392" fill="#FFFFFF">Settings</text>
+  </g>
+  <rect x="304" y="78" width="410" height="112" rx="12" fill="#141414" stroke="rgba(255,255,255,.1)"/>
+  <text x="332" y="118" fill="#FFFFFF" font-family="Inter,Arial,sans-serif" font-size="22" font-weight="700">Live ingest is healthy</text>
+  <text x="332" y="152" fill="#A3A3A3" font-family="Inter,Arial,sans-serif" font-size="14">127 events received from Claude Code, OpenClaw, and custom tools in the last 12 minutes.</text>
+  <circle cx="674" cy="120" r="10" fill="#10B981"/>
+  <rect x="748" y="78" width="256" height="112" rx="12" fill="#141414" stroke="rgba(255,255,255,.1)"/>
+  <text x="776" y="118" fill="#A3A3A3" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700">INGEST PORT</text>
+  <text x="776" y="158" fill="#38BDF8" font-family="JetBrains Mono,Menlo,monospace" font-size="22">localhost:41414</text>
+  <rect x="1030" y="78" width="278" height="112" rx="12" fill="#141414" stroke="rgba(255,255,255,.1)"/>
+  <text x="1058" y="118" fill="#A3A3A3" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700">LOCAL STORE</text>
+  <text x="1058" y="158" fill="#FFFFFF" font-family="JetBrains Mono,Menlo,monospace" font-size="18">~/.kosmos/kosmos.db</text>
+  <rect x="304" y="224" width="626" height="560" rx="14" fill="rgba(10,8,24,.84)" stroke="rgba(167,139,250,.25)"/>
+  <text x="332" y="268" fill="#FFFFFF" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="700">Runtime event stream</text>
+  <g font-family="JetBrains Mono,Menlo,monospace" font-size="14">
+    <rect x="332" y="304" width="560" height="58" rx="8" fill="#111827"/>
+    <text x="356" y="339" fill="#34D399">tool.call</text><text x="470" y="339" fill="#A3A3A3">search_files {"pattern":"prompt"}</text>
+    <rect x="332" y="378" width="560" height="58" rx="8" fill="#111827"/>
+    <text x="356" y="413" fill="#60A5FA">file.read</text><text x="470" y="413" fill="#A3A3A3">agents/researcher.md</text>
+    <rect x="332" y="452" width="560" height="58" rx="8" fill="#111827"/>
+    <text x="356" y="487" fill="#FBBF24">llm.call</text><text x="470" y="487" fill="#A3A3A3">claude-3.5-sonnet · 3.8s · $0.018</text>
+    <rect x="332" y="526" width="560" height="58" rx="8" fill="#111827"/>
+    <text x="356" y="561" fill="#F472B6">prompt.version</text><text x="512" y="561" fill="#A3A3A3">summarizer@v12 linked to run</text>
+    <rect x="332" y="600" width="560" height="58" rx="8" fill="#111827"/>
+    <text x="356" y="635" fill="#EF4444">risk.flag</text><text x="470" y="635" fill="#A3A3A3">output missing source citation</text>
+  </g>
+  <rect x="968" y="224" width="340" height="560" rx="14" fill="#141414" stroke="rgba(255,255,255,.1)"/>
+  <text x="996" y="268" fill="#FFFFFF" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="700">Current run</text>
+  <path d="M1030 336 C1086 278 1164 430 1238 332" stroke="#60A5FA" stroke-width="3" opacity=".9"/>
+  <path d="M1030 454 C1090 390 1172 548 1238 446" stroke="#A78BFA" stroke-width="3" opacity=".9"/>
+  <g fill="#050712" stroke-width="3">
+    <circle cx="1030" cy="336" r="15" stroke="#FBBF24"/>
+    <circle cx="1118" cy="382" r="15" stroke="#A78BFA"/>
+    <circle cx="1238" cy="332" r="15" stroke="#60A5FA"/>
+    <circle cx="1030" cy="454" r="15" stroke="#38BDF8"/>
+    <circle cx="1160" cy="500" r="15" stroke="#34D399"/>
+    <circle cx="1238" cy="446" r="15" stroke="#F472B6"/>
+  </g>
+  <text x="996" y="604" fill="#A3A3A3" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700">LATEST EVIDENCE</text>
+  <text x="996" y="640" fill="#FFFFFF" font-family="Inter,Arial,sans-serif" font-size="15">5 touched files</text>
+  <text x="996" y="672" fill="#FFFFFF" font-family="Inter,Arial,sans-serif" font-size="15">3 prompt versions</text>
+  <text x="996" y="704" fill="#F59E0B" font-family="Inter,Arial,sans-serif" font-size="15">1 provenance warning</text>
+</svg>

@@ -1,0 +1,47 @@
+[
+  {
+    "source": "claude_code",
+    "session": "session-claude-1",
+    "sessionId": "session-claude-1",
+    "type": "assistant",
+    "timestamp": "2026-04-06T10:00:00.000Z",
+    "message": {
+      "model": "claude-3-7-sonnet",
+      "content": [
+        {
+          "type": "tool_use",
+          "id": "toolu_1",
+          "name": "write_file",
+          "input": {
+            "file_path": "src/index.ts",
+            "content": "hello"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "source": "claude_code",
+    "session": "session-claude-1",
+    "sessionId": "session-claude-1",
+    "type": "user",
+    "timestamp": "2026-04-06T10:00:01.000Z",
+    "message": {
+      "content": [
+        {
+          "type": "tool_result",
+          "tool_use_id": "toolu_1",
+          "content": "wrote src/index.ts"
+        }
+      ]
+    }
+  },
+  {
+    "source": "claude_code",
+    "session": "session-claude-1",
+    "sessionId": "session-claude-1",
+    "type": "session_end",
+    "timestamp": "2026-04-06T10:00:02.000Z",
+    "summary": "Claude Code completed"
+  }
+]

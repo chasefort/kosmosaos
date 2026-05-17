@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+website-v2/node_modules/
+
+# Build output
+out/
+dist/
+website-v2/dist/
+
+# Electron builder cache
+.electron-builder-cache/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment files
+.env
+.env.local
+.env.*
+
+# Claude Code local config
+.claude/
+AGENTS.md
+CLAUDE.md
+design.md
+
+# Dev/test scripts
+src/main/test-*.ts
+
+# Generated documentation media
+docs/screenshots/*.gif
+
+# Editor
+.vscode/
+.idea/

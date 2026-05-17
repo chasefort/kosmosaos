@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Kosmos website
+    url: https://www.getkosmos.xyz
+    about: Product overview and release links
+  - name: Kosmos docs hub
+    url: https://github.com/chasefort/kosmosaos/blob/main/docs/README.md
+    about: Read setup, architecture, troubleshooting, and release documentation
+  - name: Kosmos wiki source
+    url: https://github.com/chasefort/kosmosaos/blob/main/wiki/Home.md
+    about: Browse the GitHub wiki-style page set

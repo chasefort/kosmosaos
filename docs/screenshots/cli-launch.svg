@@ -1,0 +1,26 @@
+<svg width="1400" height="880" viewBox="0 0 1400 880" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Kosmos CLI Launch</title>
+  <desc id="desc">A terminal and browser launch sequence for npx kosmos-aos.</desc>
+  <rect width="1400" height="880" fill="#050712"/>
+  <rect x="82" y="86" width="1236" height="708" rx="20" fill="#0A0A0A" stroke="rgba(255,255,255,.1)"/>
+  <rect x="126" y="132" width="602" height="616" rx="14" fill="#111827" stroke="rgba(255,255,255,.12)"/>
+  <circle cx="158" cy="164" r="7" fill="#EF4444"/><circle cx="184" cy="164" r="7" fill="#F59E0B"/><circle cx="210" cy="164" r="7" fill="#10B981"/>
+  <text x="158" y="230" fill="#A3A3A3" font-family="JetBrains Mono,Menlo,monospace" font-size="18">$ npx kosmos-aos ./examples/ai-context-vault</text>
+  <text x="158" y="282" fill="#38BDF8" font-family="JetBrains Mono,Menlo,monospace" font-size="18">Kosmos server listening on http://localhost:5588</text>
+  <text x="158" y="326" fill="#60A5FA" font-family="JetBrains Mono,Menlo,monospace" font-size="18">Ingest endpoint ready at http://localhost:41414/ingest</text>
+  <text x="158" y="370" fill="#34D399" font-family="JetBrains Mono,Menlo,monospace" font-size="18">Workspace scanned: 486 nodes, 731 edges</text>
+  <text x="158" y="414" fill="#FBBF24" font-family="JetBrains Mono,Menlo,monospace" font-size="18">Opening browser experience...</text>
+  <rect x="772" y="132" width="500" height="616" rx="14" fill="#141414" stroke="rgba(255,255,255,.12)"/>
+  <text x="814" y="198" fill="#FFFFFF" font-family="Inter,Arial,sans-serif" font-size="32" font-weight="700">No install. No cloud.</text>
+  <text x="814" y="242" fill="#A3A3A3" font-family="Inter,Arial,sans-serif" font-size="16">Kosmos runs as a local browser workspace and stores evidence on your machine.</text>
+  <g font-family="Inter,Arial,sans-serif" font-size="17">
+    <rect x="814" y="308" width="402" height="68" rx="10" fill="#1F1F1F"/>
+    <text x="844" y="349" fill="#FFFFFF">Point it at a repo or vault</text>
+    <rect x="814" y="404" width="402" height="68" rx="10" fill="#1F1F1F"/>
+    <text x="844" y="445" fill="#FFFFFF">Scan prompts, tools, files, sources</text>
+    <rect x="814" y="500" width="402" height="68" rx="10" fill="#1F1F1F"/>
+    <text x="844" y="541" fill="#FFFFFF">Watch live runtime events locally</text>
+    <rect x="814" y="596" width="402" height="68" rx="10" fill="#1F1F1F"/>
+    <text x="844" y="637" fill="#FFFFFF">Replay traces with evidence</text>
+  </g>
+</svg>

@@ -1,0 +1,151 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="160" y1="40" x2="1460" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#090B14"/>
+      <stop offset="1" stop-color="#070912"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="280" y1="120" x2="1320" y2="780" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#131826"/>
+      <stop offset="1" stop-color="#0D1220"/>
+    </linearGradient>
+    <linearGradient id="nodeAgent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FBBF24"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="nodeTool" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#A78BFA"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="nodePrompt" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#F472B6"/>
+      <stop offset="1" stop-color="#EC4899"/>
+    </linearGradient>
+    <linearGradient id="nodeApi" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="18" stdDeviation="28" flood-color="#02040A" flood-opacity="0.55"/>
+    </filter>
+    <filter id="glowBlue" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1320" cy="170" r="220" fill="#1D4ED8" fill-opacity="0.12"/>
+  <circle cx="280" cy="760" r="280" fill="#7C3AED" fill-opacity="0.1"/>
+  <circle cx="970" cy="620" r="320" fill="#0EA5E9" fill-opacity="0.06"/>
+
+  <rect x="28" y="24" width="76" height="852" rx="18" fill="#101520" stroke="#1C2434"/>
+  <rect x="46" y="42" width="40" height="40" rx="12" fill="#161D2B" stroke="#263248"/>
+  <text x="66" y="68" text-anchor="middle" fill="#D9E1F2" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">K</text>
+  <rect x="46" y="126" width="40" height="40" rx="12" fill="#192234" stroke="#2A3550"/>
+  <rect x="58" y="138" width="16" height="16" rx="4" stroke="#7DD3FC" stroke-width="2"/>
+  <rect x="46" y="184" width="40" height="40" rx="12" fill="#141B29"/>
+  <path d="M58 204H74M66 196V212" stroke="#64748B" stroke-width="2" stroke-linecap="round"/>
+  <rect x="46" y="242" width="40" height="40" rx="12" fill="#141B29"/>
+  <path d="M57 261H75" stroke="#64748B" stroke-width="2" stroke-linecap="round"/>
+  <rect x="46" y="300" width="40" height="40" rx="12" fill="#141B29"/>
+  <path d="M57 320C63 308 69 308 75 320" stroke="#64748B" stroke-width="2" stroke-linecap="round"/>
+  <rect x="46" y="814" width="40" height="40" rx="12" fill="#141B29"/>
+  <path d="M59 834H73M59 840H73" stroke="#64748B" stroke-width="2" stroke-linecap="round"/>
+
+  <rect x="128" y="42" width="1328" height="72" rx="20" fill="#101522" stroke="#1D2739"/>
+  <text x="166" y="73" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Universe Map</text>
+  <text x="166" y="95" fill="#7F8BA3" font-family="Inter, Arial, sans-serif" font-size="14">Live architecture plus runtime activity for the active workspace</text>
+  <rect x="1248" y="58" width="172" height="38" rx="19" fill="#10231D" stroke="#1F6A57"/>
+  <circle cx="1272" cy="77" r="5" fill="#34D399"/>
+  <text x="1286" y="82" fill="#8CF0C6" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">Live ingest connected</text>
+
+  <rect x="128" y="136" width="1328" height="692" rx="28" fill="url(#panel)" stroke="#1D2739" filter="url(#shadow)"/>
+  <rect x="158" y="166" width="232" height="170" rx="20" fill="#0F1521" stroke="#1D2739"/>
+  <text x="186" y="200" fill="#6E7B94" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">NODE FILTERS</text>
+  <rect x="186" y="220" width="176" height="34" rx="17" fill="#142035" stroke="#2A4365"/>
+  <circle cx="208" cy="237" r="6" fill="#FBBF24"/>
+  <text x="224" y="242" fill="#E6EDF8" font-family="Inter, Arial, sans-serif" font-size="13">Agents</text>
+  <rect x="186" y="264" width="176" height="34" rx="17" fill="#1A1634" stroke="#433177"/>
+  <circle cx="208" cy="281" r="6" fill="#A78BFA"/>
+  <text x="224" y="286" fill="#E6EDF8" font-family="Inter, Arial, sans-serif" font-size="13">Tools</text>
+  <rect x="186" y="308" width="176" height="34" rx="17" fill="#142030" stroke="#27566F"/>
+  <circle cx="208" cy="325" r="6" fill="#60A5FA"/>
+  <text x="224" y="330" fill="#E6EDF8" font-family="Inter, Arial, sans-serif" font-size="13">Models + APIs</text>
+
+  <rect x="1214" y="168" width="210" height="136" rx="20" fill="#0F1521" stroke="#1D2739"/>
+  <text x="1242" y="198" fill="#6E7B94" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">LIVE ACTIVITY</text>
+  <rect x="1240" y="216" width="158" height="28" rx="14" fill="#10231D" stroke="#1F6A57"/>
+  <circle cx="1258" cy="230" r="4" fill="#34D399"/>
+  <text x="1270" y="235" fill="#DDFCEF" font-family="Inter, Arial, sans-serif" font-size="12">ReleaseAgent called write_file</text>
+  <rect x="1240" y="252" width="166" height="28" rx="14" fill="#111A2A" stroke="#26415F"/>
+  <circle cx="1258" cy="266" r="4" fill="#60A5FA"/>
+  <text x="1270" y="271" fill="#E6EDF8" font-family="Inter, Arial, sans-serif" font-size="12">ResearchAgent hit Anthropic API</text>
+
+  <path d="M548 467C630 388 706 352 786 350" stroke="#60A5FA" stroke-width="4" stroke-linecap="round" stroke-opacity="0.6"/>
+  <path d="M802 350C880 350 948 377 1012 434" stroke="#A78BFA" stroke-width="4" stroke-linecap="round" stroke-opacity="0.62"/>
+  <path d="M518 531C624 566 736 578 864 566" stroke="#34D399" stroke-width="4" stroke-linecap="round" stroke-opacity="0.58"/>
+  <path d="M892 566C998 560 1080 528 1150 476" stroke="#F472B6" stroke-width="4" stroke-linecap="round" stroke-opacity="0.58"/>
+  <path d="M516 468C504 390 490 336 456 286" stroke="#64748B" stroke-width="3" stroke-opacity="0.5"/>
+  <path d="M1124 462C1170 418 1200 380 1230 330" stroke="#60A5FA" stroke-width="3" stroke-opacity="0.45"/>
+  <path d="M794 350C812 276 828 234 866 204" stroke="#FBBF24" stroke-width="3" stroke-opacity="0.45"/>
+
+  <g filter="url(#glowBlue)">
+    <circle cx="790" cy="350" r="7" fill="#60A5FA"/>
+    <circle cx="1012" cy="434" r="7" fill="#A78BFA"/>
+    <circle cx="864" cy="566" r="7" fill="#34D399"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="450" y="248" width="188" height="74" rx="18" fill="#17111E" stroke="#3F2A57"/>
+    <circle cx="478" cy="285" r="11" fill="url(#nodePrompt)"/>
+    <text x="502" y="281" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Release Plan</text>
+    <text x="502" y="302" fill="#8D99AF" font-family="Inter, Arial, sans-serif" font-size="12">Prompt</text>
+
+    <rect x="706" y="316" width="192" height="80" rx="20" fill="#111C2A" stroke="#26415F"/>
+    <circle cx="736" cy="356" r="12" fill="url(#nodeApi)"/>
+    <text x="762" y="351" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700">Anthropic API</text>
+    <text x="762" y="374" fill="#8D99AF" font-family="Inter, Arial, sans-serif" font-size="12">API Endpoint</text>
+
+    <rect x="438" y="428" width="214" height="92" rx="22" fill="#231908" stroke="#6C4A0A"/>
+    <circle cx="470" cy="474" r="13" fill="url(#nodeAgent)"/>
+    <text x="498" y="469" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">ResearchAgent</text>
+    <text x="498" y="493" fill="#9AA6BA" font-family="Inter, Arial, sans-serif" font-size="12">Agent · reads files · runs searches</text>
+
+    <rect x="890" y="396" width="214" height="92" rx="22" fill="#201629" stroke="#4F2F68"/>
+    <circle cx="922" cy="442" r="13" fill="url(#nodeTool)"/>
+    <text x="950" y="437" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">write_file</text>
+    <text x="950" y="461" fill="#9AA6BA" font-family="Inter, Arial, sans-serif" font-size="12">Tool · touched docs/changelog.md</text>
+
+    <rect x="732" y="514" width="224" height="92" rx="22" fill="#0F1E1D" stroke="#235B51"/>
+    <circle cx="764" cy="560" r="13" fill="#34D399"/>
+    <text x="792" y="555" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">Qdrant</text>
+    <text x="792" y="579" fill="#9AA6BA" font-family="Inter, Arial, sans-serif" font-size="12">Memory store · release notes context</text>
+
+    <rect x="1068" y="228" width="182" height="74" rx="18" fill="#101C2A" stroke="#27425D"/>
+    <circle cx="1096" cy="265" r="11" fill="#60A5FA"/>
+    <text x="1120" y="261" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">GPT-4o</text>
+    <text x="1120" y="282" fill="#8D99AF" font-family="Inter, Arial, sans-serif" font-size="12">Model</text>
+
+    <rect x="1086" y="526" width="192" height="74" rx="18" fill="#161826" stroke="#303A53"/>
+    <circle cx="1114" cy="563" r="11" fill="#94A3B8"/>
+    <text x="1138" y="559" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">workflows/</text>
+    <text x="1138" y="580" fill="#8D99AF" font-family="Inter, Arial, sans-serif" font-size="12">Module</text>
+  </g>
+
+  <rect x="448" y="700" width="744" height="88" rx="22" fill="#0F1521" stroke="#1D2739"/>
+  <text x="482" y="732" fill="#6E7B94" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">EDGE LEGEND</text>
+  <circle cx="490" cy="760" r="6" fill="#60A5FA"/>
+  <text x="506" y="765" fill="#D9E1F2" font-family="Inter, Arial, sans-serif" font-size="13">calls</text>
+  <circle cx="620" cy="760" r="6" fill="#A78BFA"/>
+  <text x="636" y="765" fill="#D9E1F2" font-family="Inter, Arial, sans-serif" font-size="13">uses</text>
+  <circle cx="744" cy="760" r="6" fill="#34D399"/>
+  <text x="760" y="765" fill="#D9E1F2" font-family="Inter, Arial, sans-serif" font-size="13">reads</text>
+  <circle cx="872" cy="760" r="6" fill="#F472B6"/>
+  <text x="888" y="765" fill="#D9E1F2" font-family="Inter, Arial, sans-serif" font-size="13">writes</text>
+  <circle cx="996" cy="760" r="6" fill="#64748B"/>
+  <text x="1012" y="765" fill="#D9E1F2" font-family="Inter, Arial, sans-serif" font-size="13">defines</text>
+  <text x="1248" y="814" fill="#51607A" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">kosmos</text>
+</svg>

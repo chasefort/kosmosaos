@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kosmos — The Operating System for AI Agents</title>
+  <meta name="description" content="Visualize complex agent architectures in 3D. Replay sessions frame-by-frame. Detect bottlenecks before they ship." />
+  <meta property="og:title" content="Kosmos — The Operating System for AI Agents" />
+  <meta property="og:description" content="Visualize complex agent architectures in 3D. Replay sessions frame-by-frame. Detect bottlenecks before they ship." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.getkosmos.xyz" />
+  <meta property="og:image" content="/icon.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kosmos — The Operating System for AI Agents" />
+  <meta name="twitter:description" content="Visualize complex agent architectures in 3D. Replay sessions frame-by-frame. Detect bottlenecks before they ship." />
+  <link rel="canonical" href="https://www.getkosmos.xyz" />
+  <link rel="icon" type="image/png" href="/icon.png" />
+</head>
+<body>
+
+  <!-- Grain film texture -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ═══ App Shell ═══════════════════════════════════════════════════════════ -->
+  <div id="app">
+
+    <!-- ── Header ─────────────────────────────────────────────────────────── -->
+    <header id="header">
+      <a href="#" id="logo">
+        <img src="/icon.png" alt="Kosmos logo" />
+        KOSMOS
+      </a>
+      <div class="header-actions">
+        <a href="https://github.com/chasefort/kosmosaos" target="_blank" rel="noreferrer" class="btn-secondary">
+          GitHub
+        </a>
+        <a href="#" class="btn-get-kosmos" id="btn-get-kosmos">
+          Get Kosmos
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <!-- ── Desktop: Graph Explorer ──────────────────────────────────────────── -->
+    <main id="graph-container">
+
+      <!-- Single Three.js canvas: starfield + 3D graph -->
+      <canvas id="graph-canvas" aria-label="Kosmos Graph Explorer — drag to orbit, scroll to zoom, click nodes to explore"></canvas>
+
+      <!-- HTML label overlay -->
+      <div id="node-labels" aria-hidden="true"></div>
+
+      <!-- Status Dashboard (Metrics & Narrative) -->
+      <div id="status-dashboard" aria-hidden="true">
+        <!-- Metrics overlay — compact inline session stats -->
+        <div id="metrics-overlay" aria-hidden="true">
+          <div class="metric-row"><span class="metric-value metric-live" id="metric-status">● Running</span></div>
+          <div class="metric-row"><span class="metric-label">Session</span><span class="metric-value" id="metric-session">Analyzing codebase</span></div>
+          <div class="metric-row"><span class="metric-label">Tools</span><span class="metric-value" id="metric-tools">0</span></div>
+          <div class="metric-row"><span class="metric-label">Err</span><span class="metric-value" id="metric-errors">0</span></div>
+        </div>
+
+        <!-- Narrative overlay — floating scenario text -->
+        <div id="narrative-overlay" aria-hidden="true">
+          <div id="narrative-text" class="narrative-text"></div>
+        </div>
+      </div>
+
+      <!-- Interaction hint (bottom-center, fades after first click) -->
+      <div id="hint" role="status" aria-live="polite">
+        <span>Click any node · Drag to orbit · Scroll to zoom</span>
+      </div>
+
+      <!-- Intro card — ALWAYS VISIBLE -->
+      <div id="intro-card" aria-label="About Kosmos">
+        <div class="ic-brand">
+          <img src="/icon.png" alt="" class="ic-logo" aria-hidden="true" />
+          <span class="ic-wordmark">KOSMOS</span>
+        </div>
+
+        <h2 class="ic-headline">The OS for<br/>AI Agents.</h2>
+
+        <p class="ic-desc">
+          Open Kosmos and watch your agent system turn into a living 3D graph
+          with traces, files, and runtime activity in one place.
+        </p>
+
+        <ul class="ic-features">
+          <li><span class="ic-dot" style="--c:#60a5fa"></span>Universe Map — 3D force graph of your entire agent system</li>
+          <li><span class="ic-dot" style="--c:#fbbf24"></span>Session Replay — scrub through execution like a video</li>
+          <li><span class="ic-dot" style="--c:#f87171"></span>Health Analysis — catch god agents and broken flows</li>
+          <li><span class="ic-dot" style="--c:#34d399"></span>Live Streaming — watch your graph light up in real time</li>
+        </ul>
+
+        <div class="ic-divider"></div>
+
+        <p class="ic-how-title">HOW TO USE THIS DEMO</p>
+        <ul class="ic-steps">
+          <li>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+            Click any node to open its inspector
+          </li>
+          <li>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
+            Click <strong>Features</strong> to expand all capabilities
+          </li>
+          <li>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            Drag to orbit · Scroll to zoom
+          </li>
+        </ul>
+      </div>
+
+      <!-- Inspector panel (slides in from right) -->
+      <aside id="panel" class="panel--closed" role="complementary" aria-label="Node inspector">
+
+        <!-- Panel header -->
+        <div id="panel-header">
+          <div class="panel-type-row">
+            <div class="panel-type-badge">
+              <span id="panel-type-dot"></span>
+              <span id="panel-type-label"></span>
+            </div>
+            <button id="panel-close" aria-label="Close inspector">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M18 6L6 18M6 6l12 12"/>
+              </svg>
+            </button>
+          </div>
+          <h2 id="panel-title"></h2>
+        </div>
+
+        <!-- Panel body — filled dynamically -->
+        <div id="panel-body"></div>
+
+      </aside>
+
+    </main>
+
+    <!-- ── Mobile fallback ─────────────────────────────────────────────────── -->
+    <div id="mobile-view">
+      <section class="m-hero">
+        <canvas class="m-hero-canvas" id="mobile-bg-canvas"></canvas>
+        <div class="m-hero-content">
+          <p class="m-eyebrow">The Operating System for AI Agents</p>
+          <h1 class="m-headline">
+            See Your Agents.<br/>
+            <span class="hl">Understand Everything.</span>
+          </h1>
+          <p class="m-sub">
+            Kosmos maps your agent system into a living 3D graph so you can replay runs, inspect traces, and catch problems before they ship.
+          </p>
+          <div class="m-actions">
+            <a href="#" class="m-cta" id="m-get-kosmos">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+              Get Kosmos
+            </a>
+            <a href="https://github.com/chasefort/kosmosaos" target="_blank" rel="noreferrer" class="btn-secondary">
+              GitHub
+            </a>
+          </div>
+          <div class="m-trust">
+            <span>Built for local agent workflows</span>
+            <span>·</span>
+            <span>Local-first, no cloud</span>
+            <span>·</span>
+            <span>Free during beta</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="m-features">
+        <h2 class="m-section-title">Everything you need to <span class="hl">understand your agents.</span></h2>
+        <div class="m-feat-card">
+          <div class="m-feat-head"><span class="m-feat-dot" style="--c:#60a5fa"></span><span class="m-feat-name">Universe Map</span></div>
+          <p class="m-feat-desc">Explore your entire agent architecture in an interactive 3D force-directed graph.</p>
+        </div>
+        <div class="m-feat-card">
+          <div class="m-feat-head"><span class="m-feat-dot" style="--c:#fbbf24"></span><span class="m-feat-name">Session Replay</span></div>
+          <p class="m-feat-desc">Scrub through agent execution traces like a video timeline.</p>
+        </div>
+        <div class="m-feat-card">
+          <div class="m-feat-head"><span class="m-feat-dot" style="--c:#f87171"></span><span class="m-feat-name">Health Analysis</span></div>
+          <p class="m-feat-desc">Automatic static analysis surfaces god agents, orphaned nodes, and over-permissioned scopes.</p>
+        </div>
+        <div class="m-feat-card">
+          <div class="m-feat-head"><span class="m-feat-dot" style="--c:#34d399"></span><span class="m-feat-name">Live Streaming</span></div>
+          <p class="m-feat-desc">Run your workflow in an embedded terminal and watch the graph light up in real time.</p>
+        </div>
+      </section>
+
+      <section class="m-download">
+        <h2 class="m-headline" style="font-size:22px; margin-bottom:10px;">
+          Get started in <span class="hl">30 seconds.</span>
+        </h2>
+        <div class="m-install-code">
+          <code>npx kosmos-aos</code>
+          <button class="m-copy-btn" id="m-copy-btn">Copy</button>
+        </div>
+        <p style="font-size:13px; color:var(--k-text-secondary); margin-top:12px;">
+          Requires Node.js 18+. Free during beta.
+        </p>
+      </section>
+
+      <footer class="m-footer">
+        <div class="m-footer-links">
+          <a href="https://github.com/chasefort/kosmosaos" target="_blank">GitHub</a>
+          <a href="https://www.getkosmos.xyz" target="_blank">Website</a>
+          <a href="mailto:hello@kosmos.dev">Contact</a>
+          <span style="color:var(--k-text-dim)">Privacy</span>
+          <span style="color:var(--k-text-dim)">Terms</span>
+        </div>
+        <p>&copy; 2026 Kosmos. All rights reserved.</p>
+      </footer>
+    </div>
+
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

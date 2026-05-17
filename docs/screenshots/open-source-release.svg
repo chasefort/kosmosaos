@@ -1,0 +1,30 @@
+<svg width="1400" height="880" viewBox="0 0 1400 880" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Kosmos Open Source Release</title>
+  <desc id="desc">A release checklist showing GitHub, npm, CI, and secret safety for the Kosmos open-source project.</desc>
+  <rect width="1400" height="880" fill="#0A0A0A"/>
+  <rect x="70" y="58" width="1260" height="764" rx="20" fill="#101014" stroke="rgba(255,255,255,.1)"/>
+  <text x="116" y="126" fill="#FFFFFF" font-family="Inter,Arial,sans-serif" font-size="34" font-weight="700">Open-source release surface</text>
+  <text x="116" y="166" fill="#A3A3A3" font-family="Inter,Arial,sans-serif" font-size="16">Source, docs, screenshots, npm package, and release checks move together.</text>
+  <g font-family="Inter,Arial,sans-serif">
+    <rect x="116" y="230" width="340" height="196" rx="14" fill="#141414" stroke="rgba(255,255,255,.1)"/>
+    <text x="148" y="282" fill="#FFFFFF" font-size="22" font-weight="700">GitHub</text>
+    <text x="148" y="322" fill="#A3A3A3" font-size="15">Full source repo, docs, wiki source, screenshots, workflows, examples.</text>
+    <text x="148" y="374" fill="#38BDF8" font-family="JetBrains Mono,Menlo,monospace" font-size="15">github.com/chasefort/kosmosaos</text>
+    <rect x="530" y="230" width="340" height="196" rx="14" fill="#141414" stroke="rgba(255,255,255,.1)"/>
+    <text x="562" y="282" fill="#FFFFFF" font-size="22" font-weight="700">npm CLI</text>
+    <text x="562" y="322" fill="#A3A3A3" font-size="15">Packaged browser/server runtime with a narrow allowlist.</text>
+    <text x="562" y="374" fill="#38BDF8" font-family="JetBrains Mono,Menlo,monospace" font-size="15">npx kosmos-aos</text>
+    <rect x="944" y="230" width="340" height="196" rx="14" fill="#141414" stroke="rgba(255,255,255,.1)"/>
+    <text x="976" y="282" fill="#FFFFFF" font-size="22" font-weight="700">Release tag</text>
+    <text x="976" y="322" fill="#A3A3A3" font-size="15">Tagged GitHub releases run CI, build artifacts, and publish when tokens are configured.</text>
+    <text x="976" y="374" fill="#38BDF8" font-family="JetBrains Mono,Menlo,monospace" font-size="15">v0.3.0</text>
+  </g>
+  <rect x="116" y="486" width="1168" height="238" rx="14" fill="rgba(10,8,24,.84)" stroke="rgba(167,139,250,.25)"/>
+  <text x="148" y="536" fill="#FFFFFF" font-family="Inter,Arial,sans-serif" font-size="22" font-weight="700">Safety gates</text>
+  <g font-family="Inter,Arial,sans-serif" font-size="17">
+    <circle cx="160" cy="598" r="10" fill="#10B981"/><text x="190" y="604" fill="#FFFFFF">Secret scan before public push</text>
+    <circle cx="160" cy="650" r="10" fill="#10B981"/><text x="190" y="656" fill="#FFFFFF">NPM package allowlist check</text>
+    <circle cx="566" cy="598" r="10" fill="#10B981"/><text x="596" y="604" fill="#FFFFFF">Typecheck, tests, browser build, server build</text>
+    <circle cx="566" cy="650" r="10" fill="#10B981"/><text x="596" y="656" fill="#FFFFFF">README and docs updated with current screenshots</text>
+  </g>
+</svg>

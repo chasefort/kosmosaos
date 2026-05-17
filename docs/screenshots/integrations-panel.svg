@@ -1,0 +1,65 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="140" y1="80" x2="1460" y2="840" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#090B14"/>
+      <stop offset="1" stop-color="#070912"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="180" y1="130" x2="1420" y2="790" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111726"/>
+      <stop offset="1" stop-color="#0D1220"/>
+    </linearGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="20" stdDeviation="30" flood-color="#02040A" flood-opacity="0.58"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1340" cy="180" r="210" fill="#34D399" fill-opacity="0.07"/>
+  <circle cx="320" cy="760" r="260" fill="#7C3AED" fill-opacity="0.08"/>
+
+  <rect x="112" y="74" width="1376" height="752" rx="30" fill="url(#panel)" stroke="#1B2538" filter="url(#shadow)"/>
+  <rect x="112" y="74" width="280" height="752" rx="30" fill="#101522" stroke="#1B2538"/>
+  <text x="148" y="118" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Settings</text>
+  <rect x="136" y="160" width="232" height="44" rx="14" fill="#141C2B" stroke="#243149"/>
+  <text x="166" y="188" fill="#8A98AF" font-family="Inter, Arial, sans-serif" font-size="14">Account</text>
+  <rect x="136" y="216" width="232" height="44" rx="14" fill="#141C2B" stroke="#243149"/>
+  <text x="166" y="244" fill="#8A98AF" font-family="Inter, Arial, sans-serif" font-size="14">Workspace</text>
+  <rect x="136" y="272" width="232" height="44" rx="14" fill="#15201E" stroke="#21574E"/>
+  <text x="166" y="300" fill="#DCFCEF" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">Integrations</text>
+  <rect x="136" y="328" width="232" height="44" rx="14" fill="#141C2B" stroke="#243149"/>
+  <text x="166" y="356" fill="#8A98AF" font-family="Inter, Arial, sans-serif" font-size="14">About</text>
+
+  <text x="438" y="126" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700">Integrations</text>
+  <text x="438" y="154" fill="#7B899F" font-family="Inter, Arial, sans-serif" font-size="14">Connect live runtimes, inspect ingest status, and copy local endpoints for SDKs</text>
+
+  <rect x="438" y="198" width="1012" height="176" rx="24" fill="#0F1521" stroke="#1D2739"/>
+  <text x="470" y="234" fill="#6E7B94" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">RUNTIME CONNECTORS</text>
+  <rect x="470" y="262" width="294" height="76" rx="18" fill="#101A19" stroke="#20544D"/>
+  <circle cx="500" cy="300" r="8" fill="#34D399"/>
+  <text x="522" y="294" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Claude Code</text>
+  <text x="522" y="318" fill="#9AA7BC" font-family="Inter, Arial, sans-serif" font-size="12">Connected to the active workspace</text>
+
+  <rect x="796" y="262" width="294" height="76" rx="18" fill="#111A2A" stroke="#26415F"/>
+  <circle cx="826" cy="300" r="8" fill="#60A5FA"/>
+  <text x="848" y="294" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">OpenClaw</text>
+  <text x="848" y="318" fill="#9AA7BC" font-family="Inter, Arial, sans-serif" font-size="12">Streaming session events into Kosmos</text>
+
+  <rect x="1122" y="262" width="294" height="76" rx="18" fill="#17132A" stroke="#46307A"/>
+  <circle cx="1152" cy="300" r="8" fill="#A78BFA"/>
+  <text x="1174" y="294" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Custom Ingest</text>
+  <text x="1174" y="318" fill="#9AA7BC" font-family="Inter, Arial, sans-serif" font-size="12">Use the local HTTP endpoint for anything else</text>
+
+  <rect x="438" y="402" width="1012" height="220" rx="24" fill="#0F1521" stroke="#1D2739"/>
+  <text x="470" y="438" fill="#6E7B94" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">LOCAL INGEST SERVER</text>
+  <rect x="470" y="470" width="948" height="120" rx="20" fill="#121D1B" stroke="#20544D"/>
+  <text x="504" y="510" fill="#6EE7B7" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">RUNNING</text>
+  <text x="504" y="548" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">http://localhost:41414/ingest</text>
+  <text x="504" y="578" fill="#9AA7BC" font-family="Inter, Arial, sans-serif" font-size="13">POST canonical runtime events here when you want Kosmos to visualize a custom SDK, tool runner, or local agent runtime.</text>
+  <rect x="1192" y="496" width="190" height="40" rx="20" fill="#123126" stroke="#1F6A57"/>
+  <text x="1250" y="521" fill="#DDFCEF" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700">Copy endpoint</text>
+
+  <rect x="438" y="650" width="1012" height="132" rx="24" fill="#0F1521" stroke="#1D2739"/>
+  <text x="470" y="686" fill="#6E7B94" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">WHY THIS MATTERS</text>
+  <text x="470" y="728" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">One place to see every runtime</text>
+  <text x="470" y="756" fill="#9AA7BC" font-family="Inter, Arial, sans-serif" font-size="13">Kosmos works best when the graph, traces, prompt versions, and file activity all land in the same local workspace. The integrations surface makes that connection status obvious.</text>
+</svg>

@@ -1,0 +1,93 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="60" x2="1480" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#090B14"/>
+      <stop offset="1" stop-color="#070912"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="260" y1="120" x2="1340" y2="780" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#121828"/>
+      <stop offset="1" stop-color="#0D1322"/>
+    </linearGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="20" stdDeviation="30" flood-color="#02040A" flood-opacity="0.58"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1328" cy="140" r="210" fill="#DB2777" fill-opacity="0.08"/>
+  <circle cx="320" cy="760" r="260" fill="#2563EB" fill-opacity="0.09"/>
+
+  <rect x="92" y="62" width="1416" height="776" rx="30" fill="url(#panel)" stroke="#1B2538" filter="url(#shadow)"/>
+  <rect x="92" y="62" width="1416" height="72" rx="30" fill="#101522" stroke="#1B2538"/>
+  <text x="132" y="104" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Prompt Workbench</text>
+  <text x="404" y="104" fill="#7C8BA6" font-family="Inter, Arial, sans-serif" font-size="14">Edit instruction files, save versions, and compare them against real traces</text>
+  <rect x="1312" y="80" width="156" height="36" rx="18" fill="#161A2C" stroke="#2A3753"/>
+  <text x="1340" y="103" fill="#C9D5EA" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">CLAUDE.md</text>
+
+  <rect x="124" y="162" width="234" height="634" rx="22" fill="#0F1521" stroke="#1D2739"/>
+  <text x="152" y="196" fill="#6E7B94" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">VERSIONS</text>
+  <rect x="148" y="222" width="186" height="92" rx="18" fill="#21142A" stroke="#7C2D6A"/>
+  <text x="170" y="252" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Version 3</text>
+  <text x="170" y="276" fill="#F472B6" font-family="Inter, Arial, sans-serif" font-size="12">Latest candidate</text>
+  <text x="170" y="296" fill="#98A6BC" font-family="Inter, Arial, sans-serif" font-size="12">Linked to the release trace</text>
+
+  <rect x="148" y="328" width="186" height="76" rx="18" fill="#151A29" stroke="#283550"/>
+  <text x="170" y="355" fill="#E8EEF9" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Version 2</text>
+  <text x="170" y="379" fill="#8EA0BD" font-family="Inter, Arial, sans-serif" font-size="12">Added safer file-write guidance</text>
+
+  <rect x="148" y="418" width="186" height="76" rx="18" fill="#151A29" stroke="#283550"/>
+  <text x="170" y="445" fill="#E8EEF9" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Version 1</text>
+  <text x="170" y="469" fill="#8EA0BD" font-family="Inter, Arial, sans-serif" font-size="12">Original baseline instructions</text>
+
+  <rect x="148" y="526" width="186" height="108" rx="18" fill="#101A19" stroke="#20544D"/>
+  <text x="170" y="554" fill="#6EE7B7" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">EXPERIMENT</text>
+  <text x="170" y="582" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">Compare Against Saved Dataset</text>
+  <text x="170" y="606" fill="#91A4BE" font-family="Inter, Arial, sans-serif" font-size="12">Re-run the same task with version 1, 2, or 3 and keep the trace evidence attached.</text>
+
+  <rect x="386" y="162" width="708" height="634" rx="22" fill="#0F1521" stroke="#1D2739"/>
+  <rect x="416" y="194" width="648" height="44" rx="12" fill="#141C2B" stroke="#23334E"/>
+  <circle cx="442" cy="216" r="5" fill="#34D399"/>
+  <text x="456" y="221" fill="#DCE7F8" font-family="Inter, Arial, sans-serif" font-size="14">Editing CLAUDE.md</text>
+  <text x="978" y="221" fill="#7E8BA2" font-family="Inter, Arial, sans-serif" font-size="12">Prompt-aware markdown editor</text>
+
+  <rect x="416" y="258" width="648" height="506" rx="18" fill="#0A101A" stroke="#1D2739"/>
+  <text x="448" y="304" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700"># Kosmos Prompt</text>
+  <text x="448" y="346" fill="#C7D2E5" font-family="Inter, Arial, sans-serif" font-size="16">## Release Review Rules</text>
+  <text x="448" y="382" fill="#9BA9BE" font-family="Inter, Arial, sans-serif" font-size="15">- Explore the repo before editing.</text>
+  <text x="448" y="412" fill="#9BA9BE" font-family="Inter, Arial, sans-serif" font-size="15">- Explain changed files and why they changed.</text>
+  <text x="448" y="442" fill="#9BA9BE" font-family="Inter, Arial, sans-serif" font-size="15">- Prefer precise release notes over vague summaries.</text>
+  <text x="448" y="504" fill="#C7D2E5" font-family="Inter, Arial, sans-serif" font-size="16">## Output Contract</text>
+  <text x="448" y="540" fill="#9BA9BE" font-family="Inter, Arial, sans-serif" font-size="15">- Link every recommendation back to a trace, file, or screenshot.</text>
+  <text x="448" y="570" fill="#9BA9BE" font-family="Inter, Arial, sans-serif" font-size="15">- Call out risks before suggesting a release.</text>
+  <rect x="448" y="620" width="584" height="86" rx="16" fill="#111828" stroke="#2D4060"/>
+  <text x="474" y="650" fill="#60A5FA" font-family="SFMono-Regular, Menlo, monospace" font-size="13">Suggested diff</text>
+  <text x="474" y="678" fill="#D9E6FA" font-family="SFMono-Regular, Menlo, monospace" font-size="13">+ mention token and cost impact in release notes</text>
+  <text x="474" y="700" fill="#D9E6FA" font-family="SFMono-Regular, Menlo, monospace" font-size="13">+ attach refreshed gallery screenshots before publish</text>
+
+  <rect x="1122" y="162" width="354" height="634" rx="22" fill="#0F1521" stroke="#1D2739"/>
+  <text x="1150" y="196" fill="#6E7B94" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">INSIGHTS</text>
+
+  <rect x="1150" y="220" width="298" height="108" rx="18" fill="#111A2A" stroke="#26415F"/>
+  <text x="1174" y="252" fill="#60A5FA" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">TRACE COVERAGE</text>
+  <text x="1174" y="284" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">3 versions linked</text>
+  <text x="1174" y="306" fill="#9AA7BC" font-family="Inter, Arial, sans-serif" font-size="12">Version 3 is attached to the current release trace and dataset example.</text>
+
+  <rect x="1150" y="344" width="298" height="120" rx="18" fill="#1A1428" stroke="#6B3A78"/>
+  <text x="1174" y="376" fill="#F472B6" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">VERSION PERFORMANCE</text>
+  <rect x="1174" y="398" width="212" height="10" rx="5" fill="#2A3041"/>
+  <rect x="1174" y="398" width="166" height="10" rx="5" fill="#F472B6"/>
+  <text x="1398" y="406" fill="#C9D5EA" font-family="Inter, Arial, sans-serif" font-size="12">4.0 / 5</text>
+  <rect x="1174" y="424" width="212" height="10" rx="5" fill="#2A3041"/>
+  <rect x="1174" y="424" width="132" height="10" rx="5" fill="#A78BFA"/>
+  <text x="1398" y="432" fill="#C9D5EA" font-family="Inter, Arial, sans-serif" font-size="12">3.2 / 5</text>
+  <text x="1174" y="452" fill="#9AA7BC" font-family="Inter, Arial, sans-serif" font-size="12">Version 3 wins because it keeps output grounded in files, traces, and release artifacts.</text>
+
+  <rect x="1150" y="482" width="298" height="124" rx="18" fill="#101A19" stroke="#20544D"/>
+  <text x="1174" y="514" fill="#6EE7B7" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">DATASET EXAMPLES</text>
+  <text x="1174" y="546" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">1 saved release trace</text>
+  <text x="1174" y="574" fill="#9AA7BC" font-family="Inter, Arial, sans-serif" font-size="12">Use the exact same task as a regression test whenever the prompt changes.</text>
+
+  <rect x="1150" y="624" width="298" height="140" rx="18" fill="#151A29" stroke="#283550"/>
+  <text x="1174" y="656" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">Why teams use this view</text>
+  <text x="1174" y="688" fill="#9AA7BC" font-family="Inter, Arial, sans-serif" font-size="13">Prompt edits stop being guesswork because every version stays connected to the run, feedback, cost, and touched files that came from it.</text>
+</svg>

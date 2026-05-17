@@ -1,0 +1,78 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="60" x2="1480" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#090B14"/>
+      <stop offset="1" stop-color="#070912"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="180" y1="112" x2="1420" y2="808" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111726"/>
+      <stop offset="1" stop-color="#0D1220"/>
+    </linearGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="20" stdDeviation="30" flood-color="#02040A" flood-opacity="0.58"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1340" cy="150" r="210" fill="#F59E0B" fill-opacity="0.06"/>
+  <circle cx="300" cy="760" r="260" fill="#2563EB" fill-opacity="0.08"/>
+
+  <rect x="88" y="60" width="1424" height="780" rx="30" fill="url(#panel)" stroke="#1B2538" filter="url(#shadow)"/>
+  <rect x="88" y="60" width="1424" height="78" rx="30" fill="#101522" stroke="#1B2538"/>
+  <text x="128" y="106" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Health Analysis</text>
+  <text x="354" y="106" fill="#7B899F" font-family="Inter, Arial, sans-serif" font-size="14">Architectural findings, instruction quality, and operational risk in one place</text>
+
+  <rect x="121" y="174" width="286" height="620" rx="24" fill="#0F1521" stroke="#1D2739"/>
+  <text x="153" y="208" fill="#6E7B94" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">SYSTEM SCORE</text>
+  <circle cx="264" cy="326" r="92" stroke="#1E293B" stroke-width="18"/>
+  <circle cx="264" cy="326" r="92" stroke="#F59E0B" stroke-width="18" stroke-linecap="round" stroke-dasharray="455 578" transform="rotate(-90 264 326)"/>
+  <text x="264" y="318" text-anchor="middle" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="700">74</text>
+  <text x="264" y="350" text-anchor="middle" fill="#F59E0B" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Needs work</text>
+
+  <rect x="149" y="454" width="230" height="138" rx="20" fill="#111A2A" stroke="#26415F"/>
+  <text x="175" y="486" fill="#60A5FA" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">OPERATIONAL OVERVIEW</text>
+  <text x="175" y="520" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">12 sessions this week</text>
+  <text x="175" y="548" fill="#9AA7BC" font-family="Inter, Arial, sans-serif" font-size="13">Top issue: one release agent still handles too many outbound connections and file writes.</text>
+
+  <rect x="149" y="616" width="230" height="140" rx="20" fill="#101A19" stroke="#20544D"/>
+  <text x="175" y="648" fill="#6EE7B7" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">INSTRUCTION HEALTH</text>
+  <text x="175" y="682" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">2 prompt files need cleanup</text>
+  <text x="175" y="710" fill="#9AA7BC" font-family="Inter, Arial, sans-serif" font-size="13">One system prompt is too long and still contains a TODO marker that should ship as documentation, not runtime context.</text>
+
+  <rect x="437" y="174" width="1040" height="196" rx="24" fill="#0F1521" stroke="#1D2739"/>
+  <text x="469" y="208" fill="#6E7B94" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">KEY METRICS</text>
+
+  <rect x="469" y="232" width="196" height="106" rx="18" fill="#151A29" stroke="#283550"/>
+  <text x="495" y="264" fill="#7B899F" font-family="Inter, Arial, sans-serif" font-size="12">Sessions</text>
+  <text x="495" y="306" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="700">12</text>
+
+  <rect x="683" y="232" width="196" height="106" rx="18" fill="#151A29" stroke="#283550"/>
+  <text x="709" y="264" fill="#7B899F" font-family="Inter, Arial, sans-serif" font-size="12">Tool calls</text>
+  <text x="709" y="306" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="700">48</text>
+
+  <rect x="897" y="232" width="196" height="106" rx="18" fill="#151A29" stroke="#283550"/>
+  <text x="923" y="264" fill="#7B899F" font-family="Inter, Arial, sans-serif" font-size="12">Error rate</text>
+  <text x="923" y="306" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="700">17%</text>
+
+  <rect x="1111" y="232" width="196" height="106" rx="18" fill="#151A29" stroke="#283550"/>
+  <text x="1137" y="264" fill="#7B899F" font-family="Inter, Arial, sans-serif" font-size="12">Files in graph</text>
+  <text x="1137" y="306" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="700">31</text>
+
+  <rect x="437" y="396" width="1040" height="398" rx="24" fill="#0F1521" stroke="#1D2739"/>
+  <text x="469" y="430" fill="#6E7B94" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">FINDINGS</text>
+
+  <rect x="469" y="456" width="1000" height="92" rx="18" fill="#241214" stroke="#7F1D1D"/>
+  <rect x="469" y="456" width="6" height="92" rx="3" fill="#EF4444"/>
+  <text x="495" y="490" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">God agent: ReleaseAgent</text>
+  <text x="495" y="520" fill="#D6DCE8" font-family="Inter, Arial, sans-serif" font-size="13">ReleaseAgent owns file writes, GitHub publishing, and final summarization. Split it into smaller workers before the graph grows again.</text>
+
+  <rect x="469" y="564" width="1000" height="92" rx="18" fill="#241D12" stroke="#9A6700"/>
+  <rect x="469" y="564" width="6" height="92" rx="3" fill="#F59E0B"/>
+  <text x="495" y="598" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Large instruction file: prompts/system.md</text>
+  <text x="495" y="628" fill="#D6DCE8" font-family="Inter, Arial, sans-serif" font-size="13">The current system prompt is overly long and still carries TODO text. Move release-only guidance into docs and keep runtime context tight.</text>
+
+  <rect x="469" y="672" width="1000" height="92" rx="18" fill="#131D2B" stroke="#1D4ED8"/>
+  <rect x="469" y="672" width="6" height="92" rx="3" fill="#60A5FA"/>
+  <text x="495" y="706" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Low-confidence nodes found in services/</text>
+  <text x="495" y="736" fill="#D6DCE8" font-family="Inter, Arial, sans-serif" font-size="13">A few runtime helpers are still inferred generically. Add clearer naming and module boundaries so the scanner can map them cleanly.</text>
+</svg>

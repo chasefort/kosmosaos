@@ -1,0 +1,42 @@
+[
+  {
+    "source": "openclaw",
+    "sessionId": "openclaw-1",
+    "type": "before_tool_call",
+    "timestamp": "2026-04-06T11:00:00.000Z",
+    "agentName": "OpenClaw",
+    "toolName": "write_file",
+    "callId": "call-1",
+    "input": {
+      "path": "src/index.ts",
+      "content": "data"
+    }
+  },
+  {
+    "source": "openclaw",
+    "sessionId": "openclaw-1",
+    "type": "subagent_spawned",
+    "timestamp": "2026-04-06T11:00:00.500Z",
+    "subagentId": "sub-1",
+    "subagentName": "Explorer"
+  },
+  {
+    "source": "openclaw",
+    "sessionId": "openclaw-1",
+    "type": "after_tool_call",
+    "timestamp": "2026-04-06T11:00:01.000Z",
+    "agentName": "OpenClaw",
+    "toolName": "write_file",
+    "callId": "call-1",
+    "output": {
+      "ok": true
+    }
+  },
+  {
+    "source": "openclaw",
+    "sessionId": "openclaw-1",
+    "type": "agent_end",
+    "timestamp": "2026-04-06T11:00:02.000Z",
+    "agentName": "OpenClaw"
+  }
+]

@@ -1,0 +1,46 @@
+:root {
+    /* Core Palette - Minimal Dieter Rams / Tech */
+    --k-bg-base: #0a0a0a;
+    /* Deep matte black */
+    --k-bg-panel: #141414;
+    /* Very dark neutral grey for panels */
+    --k-bg-panel-hover: #1f1f1f;
+
+    /* Crisp, barely-there borders */
+    --k-border-subtle: rgba(255, 255, 255, 0.08);
+    --k-border-focus: rgba(255, 255, 255, 0.2);
+
+    /* High contrast text hierarchy */
+    --k-text-primary: #ffffff;
+    --k-text-secondary: #a3a3a3;
+    /* Neutral grey 400 */
+    --k-text-dim: #525252;
+    /* Neutral grey 600 */
+
+    /* Single restrained accent (Dusty/slate blue instead of neon) */
+    --k-accent-blue: #60a5fa;
+    --k-accent-purple: #94a3b8;
+    /* Muted to slate for secondary accents */
+    --k-accent-cyan: #38bdf8;
+
+    /* Node Type Colors (Muted, functional) */
+    --k-node-agent: #eab308;
+    /* Muted yellow */
+    --k-node-tool: #94a3b8;
+    /* Slate */
+    --k-node-prompt: #f472b6;
+    /* Muted pink */
+    --k-node-model: #60a5fa;
+    --k-node-memory: #34d399;
+    --k-node-api: #f87171;
+    --k-node-module: #64748b;
+
+    /* Status Colors */
+    --k-status-ok: #10b981;
+    --k-status-warn: #f59e0b;
+    --k-status-error: #ef4444;
+    --k-status-offline: #525252;
+
+    /* Remove heavy glass blurs; prefer solid matte with tiny drop shadows */
+    --k-blur-panel: none;
+}

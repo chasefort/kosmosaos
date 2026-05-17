@@ -1,0 +1,270 @@
+@import './theme.css';
+
+/* Pulsing ping animation for integration detection indicators */
+@keyframes kosmos-ping {
+    0%   { transform: scale(1); opacity: 0.5; }
+    75%  { transform: scale(2.2); opacity: 0; }
+    100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* Slide-in for help tooltip cards */
+@keyframes helpcard-in {
+    from { opacity: 0; transform: translateY(5px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0)  scale(1); }
+}
+
+/* Deep-space shooting star streak */
+@keyframes kosmos-shoot {
+    0%    { opacity: 0; transform: translateX(-120px); }
+    4%    { opacity: 0; }
+    8%    { opacity: 0.9; }
+    24%   { opacity: 0; transform: translateX(380px); }
+    100%  { opacity: 0; transform: translateX(-120px); }
+}
+
+/* Gentle star twinkle */
+@keyframes kosmos-twinkle {
+    0%, 100% { opacity: 0.15; }
+    50%       { opacity: 0.85; }
+}
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: var(--k-text-primary);
+  background-color: var(--k-bg-base);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
+  /* Tighter tech feel */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+html,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  /* App shell manages its own scrolling */
+}
+
+a {
+  color: var(--k-accent-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  /* Thin tech scrollbar */
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--k-border-subtle);
+  border-radius: 0px;
+  /* Sharp corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--k-text-dim);
+}
+
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Base App Layout */
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background: var(--k-bg-base);
+  color: var(--k-text-primary);
+  /* Leave space for macOS traffic lights */
+  padding-top: 30px;
+}
+
+/* Draggable titlebar area for macOS */
+.titlebar-drag-region {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  -webkit-app-region: drag;
+  z-index: 10;
+  background: var(--k-bg-base);
+}
+
+/* ── React Flow dark theme overrides ──────────────────────────────────────── */
+.react-flow { background: transparent !important; }
+.react-flow__renderer { background: transparent !important; }
+.react-flow__background { background: transparent !important; }
+.react-flow__controls { box-shadow: none !important; }
+.react-flow__controls-button {
+  background: rgba(15,15,22,0.9) !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  color: #94a3b8 !important;
+  fill: #94a3b8 !important;
+}
+.react-flow__controls-button:hover {
+  background: rgba(255,255,255,0.06) !important;
+}
+.react-flow__minimap { box-shadow: none !important; }
+.react-flow__edge-path { cursor: pointer; }
+.react-flow__node { cursor: pointer; }
+.react-flow__node.selected > div { outline: none; }
+
+/* File explorer row hover */
+.file-row:hover {
+  background: rgba(255, 255, 255, 0.04) !important;
+  color: var(--k-text-primary) !important;
+}
+
+/* ── Markdown / prose editor ──────────────────────────────────────────────── */
+.obsidian-textarea {
+  width: 100%;
+  max-width: 680px;
+  flex: 1;
+  background: transparent;
+  color: #d7dee8;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.72;
+  padding: 28px 32px 56px;
+  border: none;
+  outline: none;
+  resize: none;
+  overflow-y: auto;
+  tab-size: 2;
+  caret-color: var(--k-accent-blue);
+}
+
+.obsidian-textarea::placeholder { color: #374151; }
+.obsidian-textarea:focus { background: rgba(255,255,255,0.01); }
+.obsidian-textarea::selection {
+  background: rgba(96, 165, 250, 0.28);
+  color: #f8fafc;
+}
+
+/* ── Code / source file editor ───────────────────────────────────────────── */
+.kosmos-code-textarea {
+  width: 100%;
+  flex: 1;
+  background: transparent;
+  color: #cdd9e5;
+  font-family: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  padding: 28px 28px 48px 36px;
+  border: none;
+  outline: none;
+  resize: none;
+  overflow-y: auto;
+  tab-size: 2;
+  caret-color: #60a5fa;
+}
+
+.kosmos-code-textarea::placeholder { color: #374151; font-style: italic; }
+
+/* ── Markdown preview ────────────────────────────────────────────────────── */
+.obsidian-preview-container {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 36px 32px 48px;
+}
+
+.markdown-preview {
+  color: #cbd5e1;
+  font-size: 15px;
+  line-height: 1.8;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.markdown-preview h1 {
+  font-size: 2em; letter-spacing: -0.025em; font-weight: 700;
+  margin: 1.6em 0 0.5em; color: #f1f5f9;
+  border-bottom: 1px solid rgba(255,255,255,0.07); padding-bottom: 0.3em;
+}
+.markdown-preview h2 {
+  font-size: 1.5em; letter-spacing: -0.015em; font-weight: 600;
+  margin: 1.4em 0 0.4em; color: #e2e8f0;
+}
+.markdown-preview h3 {
+  font-size: 1.2em; letter-spacing: -0.01em; font-weight: 600;
+  margin: 1.2em 0 0.35em; color: #cbd5e1;
+}
+.markdown-preview h4,
+.markdown-preview h5,
+.markdown-preview h6 { font-size: 1em; font-weight: 600; margin: 1em 0 0.3em; color: #94a3b8; }
+.markdown-preview p { margin: 0.75em 0; }
+.markdown-preview code {
+  background: rgba(148,163,184,0.1); padding: 0.15em 0.45em; border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace; font-size: 0.84em; color: #38bdf8;
+  border: 1px solid rgba(56,189,248,0.15);
+}
+.markdown-preview pre {
+  background: #080b12; border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px; padding: 18px 20px; overflow-x: auto; margin: 1.3em 0;
+  position: relative;
+}
+.markdown-preview pre::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, #60a5fa44, transparent);
+  border-radius: 8px 8px 0 0;
+}
+.markdown-preview pre code {
+  background: none; padding: 0; color: #b0c4de; font-size: 0.84em; border: none;
+}
+.markdown-preview blockquote {
+  border-left: 2px solid #6366f1;
+  background: rgba(99,102,241,0.06);
+  padding: 10px 18px; border-radius: 0 6px 6px 0;
+  margin: 1.2em 0; color: #94a3b8; font-style: italic;
+}
+.markdown-preview li { margin: 0.35em 0; list-style: disc; margin-left: 1.5em; }
+.markdown-preview hr {
+  border: none; border-top: 1px solid rgba(255,255,255,0.07); margin: 2em 0;
+}
+.markdown-preview a {
+  color: #818cf8; text-decoration: none;
+  border-bottom: 1px solid rgba(129,140,248,0.3); transition: border-color 0.15s;
+}
+.markdown-preview a:hover { border-color: #818cf8; }
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
