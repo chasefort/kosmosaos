@@ -49,6 +49,7 @@
     "build:server": "tsc -p tsconfig.server.json",
     "build:npx": "npm run build:browser && npm run build:server",
     "media:gifs": "node scripts/generate-live-gifs.mjs",
+    "media:github-gifs": "node scripts/generate-github-demo-gifs.mjs",
     "public:home:export": "node scripts/export-public-home-repo.mjs",
     "website:build": "npm --prefix website-v2 run build",
     "pack:dry": "npm_config_cache=/tmp/kosmos-npm-cache npm pack --dry-run --json",

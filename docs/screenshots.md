@@ -2,6 +2,20 @@
 
 These visuals are the fastest way to understand what Kosmos makes visible: structure, live behavior, prompt changes, trace evidence, and local trust gaps. Product screens are captured from a local Kosmos run against `examples/ai-context-vault`.
 
+## GitHub Demo Animations
+
+![Launch To Trust Overview](screenshots/github-demo-launch-trust-overview.gif)
+
+Run `npx kosmos-aos`, open the local browser workspace, and get an immediate trust overview for the repo or vault.
+
+![Live Trace Replay](screenshots/github-demo-live-trace-replay.gif)
+
+Watch runtime events arrive through local ingest, then replay the same run as trace evidence with spans, files, prompts, and cost.
+
+![Context Audit Fix Queue](screenshots/github-demo-context-audit-fix-queue.gif)
+
+Use context audit to turn broken links, missing sources, stale outputs, and risky instructions into a review queue.
+
 ## Architecture Map
 
 ![Architecture Map](screenshots/architecture-map.svg)

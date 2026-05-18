@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=960, height=540" />
+    <script src="./gsap-shim.js"></script>
+    <link rel="stylesheet" href="./shared.css" />
+    <style>
+      .launch-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 1fr;
+        gap: 14px;
+      }
+
+      .trust-card {
+        height: 184px;
+        padding: 18px;
+        background:
+          radial-gradient(circle at 76% 22%, rgba(16, 185, 129, 0.16), transparent 38%),
+          #141414;
+      }
+
+      .score-row {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        margin-top: 10px;
+      }
+
+      .score {
+        color: #10b981;
+        font-size: 58px;
+        line-height: 60px;
+        font-weight: 800;
+      }
+
+      .ring {
+        width: 76px;
+        height: 76px;
+        border-radius: 999px;
+        border: 10px solid rgba(16, 185, 129, 0.18);
+        border-top-color: #10b981;
+        border-right-color: #60a5fa;
+      }
+
+      .finding-list {
+        height: 184px;
+        padding: 14px;
+      }
+
+      .finding {
+        display: grid;
+        grid-template-columns: 12px 1fr auto;
+        gap: 9px;
+        align-items: center;
+        height: 34px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        color: #d4d4d4;
+        font-size: 12px;
+      }
+
+      .finding:last-child { border-bottom: 0; }
+
+      .finding-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+      }
+
+      .mini-map {
+        position: relative;
+        height: 132px;
+        margin-top: 14px;
+        background: rgba(5, 7, 18, 0.9);
+        border: 1px solid rgba(167, 139, 250, 0.22);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .scan-line {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+        opacity: 0.85;
+      }
+
+      .launch-terminal {
+        margin-bottom: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="composition" data-composition-id="main" data-start="0" data-duration="7" data-width="960" data-height="540">
+      <div class="stars"></div>
+      <div class="terminal launch-terminal" id="terminal" style="position:absolute; left:48px; right:48px; top:46px;">
+        <div class="terminal-bar"><span class="traffic red"></span><span class="traffic yellow"></span><span class="traffic green"></span></div>
+        <div class="terminal-content mono">
+          <div><span class="prompt">$</span> npx kosmos-aos ./examples/ai-context-vault</div>
+          <div id="line1" style="opacity:0;"><span class="ok">✓</span> scanning local workspace</div>
+          <div id="line2" style="opacity:0;"><span class="ok">✓</span> browser UI ready at <span class="cyan">localhost:5588</span></div>
+        </div>
+      </div>
+
+      <div class="app" id="app" style="opacity:0; transform: translateY(18px) scale(0.985);">
+        <aside class="sidebar">
+          <div class="brand"><span class="mark"></span> Kosmos</div>
+          <div class="nav-item active"><span class="dot"></span> Dashboard</div>
+          <div class="nav-item"><span class="dot"></span> Universe Map</div>
+          <div class="nav-item"><span class="dot"></span> Runs</div>
+          <div class="nav-item"><span class="dot"></span> Health</div>
+          <div class="nav-item"><span class="dot"></span> Settings</div>
+        </aside>
+        <main class="main">
+          <div class="topbar">
+            <div>
+              <div class="eyebrow">Trust Overview</div>
+              <div class="title">Can I trust this workspace?</div>
+            </div>
+            <div class="status-pill"><span class="dot" style="background:#10b981;"></span> Local only</div>
+          </div>
+          <div class="launch-grid">
+            <section class="panel trust-card" id="scoreCard">
+              <div class="panel-title">AI readiness</div>
+              <div class="score-row">
+                <div>
+                  <div class="score">86</div>
+                  <div class="panel-subtitle">ready with review queue</div>
+                </div>
+                <div class="ring"></div>
+              </div>
+            </section>
+            <section class="panel finding-list">
+              <div class="panel-title" style="margin-bottom:8px;">Needs review</div>
+              <div class="finding" id="f1"><span class="finding-dot" style="background:#ef4444;"></span><span>Broken wikilinks</span><span class="error mono">4</span></div>
+              <div class="finding" id="f2"><span class="finding-dot" style="background:#f59e0b;"></span><span>Outputs missing sources</span><span class="warn mono">7</span></div>
+              <div class="finding" id="f3"><span class="finding-dot" style="background:#60a5fa;"></span><span>Recent agent sessions</span><span class="cyan mono">3</span></div>
+            </section>
+          </div>
+          <div class="mini-map">
+            <div class="scan-line" id="scan"></div>
+            <div class="edge" style="left:168px; top:57px; width:236px; transform:rotate(14deg);"></div>
+            <div class="edge" style="left:378px; top:112px; width:198px; transform:rotate(-25deg);"></div>
+            <div class="edge" style="left:528px; top:58px; width:126px; transform:rotate(16deg);"></div>
+            <div class="node" style="left:154px; top:50px; background:#fbbf24;"></div>
+            <div class="node" style="left:373px; top:101px; background:#a78bfa;"></div>
+            <div class="node" style="left:516px; top:50px; background:#60a5fa;"></div>
+            <div class="node" style="left:644px; top:84px; background:#38bdf8;"></div>
+          </div>
+        </main>
+      </div>
+
+      <div class="caption" id="caption"><strong>No install. No signup. No cloud.</strong><span>Start with <span class="mono">npx kosmos-aos</span></span></div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.to("#line1", { opacity: 1, duration: 0.25 }, 0.8)
+        .to("#line2", { opacity: 1, duration: 0.25 }, 1.45)
+        .to("#terminal", { y: -22, scale: 0.92, opacity: 0.78, duration: 0.55 }, 2.15)
+        .to("#app", { opacity: 1, y: 0, scale: 1, duration: 0.65 }, 2.45)
+        .from("#scoreCard", { scale: 0.96, opacity: 0, duration: 0.45 }, 3.1)
+        .from("#f1", { x: 20, opacity: 0, duration: 0.24 }, 3.45)
+        .from("#f2", { x: 20, opacity: 0, duration: 0.24 }, 3.7)
+        .from("#f3", { x: 20, opacity: 0, duration: 0.24 }, 3.95)
+        .from(".node", { scale: 0, opacity: 0, duration: 0.35, stagger: 0.08 }, 4.2)
+        .from(".edge", { width: 0, opacity: 0, duration: 0.5, stagger: 0.08 }, 4.35)
+        .to("#scan", { y: 132, duration: 1.8, ease: "none" }, 4.6)
+        .to("#caption", { borderColor: "rgba(96,165,250,0.52)", duration: 0.55, yoyo: true, repeat: 1 }, 5.4);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

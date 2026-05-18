@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=960, height=540" />
+    <script src="./gsap-shim.js"></script>
+    <link rel="stylesheet" href="./shared.css" />
+    <style>
+      .trace-layout {
+        display: grid;
+        grid-template-columns: 1fr 276px;
+        gap: 14px;
+      }
+
+      .event-stream {
+        height: 320px;
+        padding: 14px;
+        overflow: hidden;
+      }
+
+      .event {
+        height: 44px;
+        display: grid;
+        grid-template-columns: 72px 1fr auto;
+        align-items: center;
+        gap: 10px;
+        padding: 0 10px;
+        margin-bottom: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.025);
+        color: #d4d4d4;
+        font-size: 12px;
+      }
+
+      .event-type {
+        font: 600 10px/14px Inter, system-ui, sans-serif;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .trace-panel {
+        height: 320px;
+        padding: 14px;
+      }
+
+      .span {
+        position: relative;
+        height: 30px;
+        margin-top: 12px;
+        border-radius: 6px;
+        background: rgba(96, 165, 250, 0.12);
+        border: 1px solid rgba(96, 165, 250, 0.24);
+      }
+
+      .span-fill {
+        height: 100%;
+        width: 0;
+        border-radius: 6px;
+        background: linear-gradient(90deg, #60a5fa, #38bdf8);
+      }
+
+      .inspector {
+        position: absolute;
+        left: 172px;
+        right: 20px;
+        bottom: 20px;
+        height: 92px;
+        padding: 13px;
+        background: #141414;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+      }
+
+      .file-chip {
+        display: inline-flex;
+        align-items: center;
+        height: 24px;
+        padding: 0 8px;
+        margin: 7px 5px 0 0;
+        border-radius: 6px;
+        background: rgba(56, 189, 248, 0.1);
+        border: 1px solid rgba(56, 189, 248, 0.24);
+        color: #bae6fd;
+        font-size: 11px;
+      }
+
+      .replay-cursor {
+        position: absolute;
+        top: 82px;
+        bottom: 24px;
+        width: 2px;
+        background: #f59e0b;
+        box-shadow: 0 0 18px rgba(245, 158, 11, 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="composition" data-composition-id="main" data-start="0" data-duration="8" data-width="960" data-height="540">
+      <div class="stars"></div>
+      <div class="app">
+        <aside class="sidebar">
+          <div class="brand"><span class="mark"></span> Kosmos</div>
+          <div class="nav-item"><span class="dot"></span> Dashboard</div>
+          <div class="nav-item"><span class="dot"></span> Universe Map</div>
+          <div class="nav-item active"><span class="dot"></span> Runs</div>
+          <div class="nav-item"><span class="dot"></span> Health</div>
+          <div class="nav-item"><span class="dot"></span> Settings</div>
+        </aside>
+        <main class="main">
+          <div class="topbar">
+            <div>
+              <div class="eyebrow">Live Monitoring → Trace Inspector</div>
+              <div class="title">Agent activity becomes evidence</div>
+            </div>
+            <div class="status-pill"><span class="dot" style="background:#10b981;"></span> ingest connected</div>
+          </div>
+          <div class="trace-layout">
+            <section class="panel event-stream">
+              <div class="panel-title">Runtime stream</div>
+              <div id="event1" class="event" style="opacity:0;"><span class="event-type cyan">read</span><span class="mono">src/agent.ts</span><span class="ok">ok</span></div>
+              <div id="event2" class="event" style="opacity:0;"><span class="event-type purple">tool</span><span class="mono">grep "promptVersion"</span><span class="ok">42ms</span></div>
+              <div id="event3" class="event" style="opacity:0;"><span class="event-type">model</span><span class="mono">claude-sonnet-4</span><span class="cyan">$0.014</span></div>
+              <div id="event4" class="event" style="opacity:0;"><span class="event-type warn">write</span><span class="mono">src/index.ts</span><span class="warn">diff</span></div>
+              <div id="event5" class="event" style="opacity:0;"><span class="event-type ok">end</span><span>release-demo completed</span><span class="ok">saved</span></div>
+            </section>
+            <section class="panel trace-panel" id="tracePanel">
+              <div class="panel-title">Trace replay</div>
+              <div class="panel-subtitle">spans, prompts, files, and costs line up</div>
+              <div class="span"><div id="span1" class="span-fill"></div></div>
+              <div class="span"><div id="span2" class="span-fill" style="background:linear-gradient(90deg,#a78bfa,#f472b6);"></div></div>
+              <div class="span"><div id="span3" class="span-fill" style="background:linear-gradient(90deg,#f59e0b,#60a5fa);"></div></div>
+              <div class="metric panel" style="margin-top:18px;">
+                <div class="metric-label">Run cost</div>
+                <div class="metric-value" style="font-size:28px;">$0.014</div>
+              </div>
+            </section>
+          </div>
+          <div id="cursor" class="replay-cursor" style="left:345px; opacity:0;"></div>
+          <section class="inspector" id="inspector" style="opacity:0;">
+            <div class="panel-title">Touched files and prompt evidence</div>
+            <span class="file-chip mono">CLAUDE.md v3</span>
+            <span class="file-chip mono">src/agent.ts</span>
+            <span class="file-chip mono">src/index.ts</span>
+          </section>
+        </main>
+      </div>
+      <div class="caption"><strong>Watch live. Replay later.</strong><span>Every run keeps its trace evidence local.</span></div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.to("#event1", { opacity: 1, y: 0, duration: 0.22 }, 0.55)
+        .from("#event1", { y: 18, duration: 0.22 }, 0.55)
+        .to("#event2", { opacity: 1, duration: 0.22 }, 1.05)
+        .from("#event2", { y: 18, duration: 0.22 }, 1.05)
+        .to("#event3", { opacity: 1, duration: 0.22 }, 1.55)
+        .from("#event3", { y: 18, duration: 0.22 }, 1.55)
+        .to("#event4", { opacity: 1, duration: 0.22 }, 2.05)
+        .from("#event4", { y: 18, duration: 0.22 }, 2.05)
+        .to("#event5", { opacity: 1, duration: 0.22 }, 2.55)
+        .from("#event5", { y: 18, duration: 0.22 }, 2.55)
+        .to("#span1", { width: "82%", duration: 0.8 }, 3.1)
+        .to("#span2", { width: "58%", duration: 0.8 }, 3.45)
+        .to("#span3", { width: "94%", duration: 0.8 }, 3.8)
+        .to("#cursor", { opacity: 1, duration: 0.2 }, 4.15)
+        .to("#cursor", { x: 360, duration: 1.8, ease: "none" }, 4.2)
+        .to("#inspector", { opacity: 1, y: -4, duration: 0.45 }, 4.9)
+        .to("#tracePanel", { borderColor: "rgba(96,165,250,0.46)", duration: 0.4, yoyo: true, repeat: 1 }, 5.7);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

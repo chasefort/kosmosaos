@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=960, height=540" />
+  </head>
+  <body>
+    <div
+      data-composition-id="launch-trust-overview"
+      data-composition-src="./compositions/launch-trust-overview.html"
+      data-start="0"
+      data-duration="7"
+      data-width="960"
+      data-height="540"
+    ></div>
+    <div
+      data-composition-id="live-trace-replay"
+      data-composition-src="./compositions/live-trace-replay.html"
+      data-start="0"
+      data-duration="8"
+      data-width="960"
+      data-height="540"
+    ></div>
+    <div
+      data-composition-id="context-audit-fix-queue"
+      data-composition-src="./compositions/context-audit-fix-queue.html"
+      data-start="0"
+      data-duration="8"
+      data-width="960"
+      data-height="540"
+    ></div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["launch-trust-overview"] = { time() {} };
+      window.__timelines["live-trace-replay"] = { time() {} };
+      window.__timelines["context-audit-fix-queue"] = { time() {} };
+    </script>
+  </body>
+</html>

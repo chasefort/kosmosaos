@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=960, height=540" />
+    <script src="./gsap-shim.js"></script>
+    <link rel="stylesheet" href="./shared.css" />
+    <style>
+      .audit-layout {
+        display: grid;
+        grid-template-columns: 1fr 286px;
+        gap: 14px;
+      }
+
+      .queue {
+        height: 328px;
+        padding: 14px;
+      }
+
+      .issue {
+        display: grid;
+        grid-template-columns: 10px 1fr auto;
+        gap: 10px;
+        align-items: center;
+        min-height: 46px;
+        padding: 7px 9px;
+        margin-top: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.025);
+      }
+
+      .issue.selected {
+        border-color: rgba(96, 165, 250, 0.48);
+        background: rgba(96, 165, 250, 0.1);
+      }
+
+      .issue-name {
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .issue-path {
+        color: #a3a3a3;
+        font-size: 11px;
+      }
+
+      .badge {
+        height: 22px;
+        display: inline-flex;
+        align-items: center;
+        padding: 0 7px;
+        border-radius: 999px;
+        font-size: 10px;
+        font-weight: 700;
+      }
+
+      .evidence {
+        height: 328px;
+        padding: 14px;
+      }
+
+      .source-card {
+        margin-top: 12px;
+        padding: 12px;
+        border-radius: 8px;
+        background: rgba(5, 7, 18, 0.82);
+        border: 1px solid rgba(167, 139, 250, 0.22);
+      }
+
+      .health-strip {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        height: 82px;
+        display: grid;
+        grid-template-columns: 170px 1fr 120px;
+        gap: 14px;
+        align-items: center;
+        padding: 14px;
+      }
+
+      .progress {
+        height: 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        width: 58%;
+        height: 100%;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #f59e0b, #10b981);
+      }
+
+      .fix-button {
+        height: 34px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #0a0a0a;
+        background: #60a5fa;
+        font-size: 12px;
+        font-weight: 800;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="composition" data-composition-id="main" data-start="0" data-duration="8" data-width="960" data-height="540">
+      <div class="stars"></div>
+      <div class="app">
+        <aside class="sidebar">
+          <div class="brand"><span class="mark"></span> Kosmos</div>
+          <div class="nav-item"><span class="dot"></span> Dashboard</div>
+          <div class="nav-item"><span class="dot"></span> Universe Map</div>
+          <div class="nav-item"><span class="dot"></span> Runs</div>
+          <div class="nav-item active"><span class="dot"></span> Health</div>
+          <div class="nav-item"><span class="dot"></span> Settings</div>
+        </aside>
+        <main class="main">
+          <div class="topbar">
+            <div>
+              <div class="eyebrow">Context Audit</div>
+              <div class="title">Find what your AI should not trust yet</div>
+            </div>
+            <div class="status-pill"><span class="dot" style="background:#f59e0b;"></span> 11 findings</div>
+          </div>
+          <div class="audit-layout">
+            <section class="panel queue">
+              <div class="panel-title">Prioritized review queue</div>
+              <div id="issue1" class="issue">
+                <span class="dot" style="background:#ef4444;"></span>
+                <div><div class="issue-name">Broken wikilink</div><div class="issue-path mono">[[launch-plan]] in README.md</div></div>
+                <span class="badge" style="color:#fecaca; background:rgba(239,68,68,0.14);">risk</span>
+              </div>
+              <div id="issue2" class="issue">
+                <span class="dot" style="background:#f59e0b;"></span>
+                <div><div class="issue-name">Generated output missing sources</div><div class="issue-path mono">reports/release.md</div></div>
+                <span class="badge" style="color:#fde68a; background:rgba(245,158,11,0.15);">audit</span>
+              </div>
+              <div id="issue3" class="issue">
+                <span class="dot" style="background:#a78bfa;"></span>
+                <div><div class="issue-name">Instruction file changed by AI</div><div class="issue-path mono">CLAUDE.md</div></div>
+                <span class="badge" style="color:#ddd6fe; background:rgba(167,139,250,0.16);">prompt</span>
+              </div>
+              <div id="issue4" class="issue">
+                <span class="dot" style="background:#525252;"></span>
+                <div><div class="issue-name">Orphan note</div><div class="issue-path mono">notes/model-eval.md</div></div>
+                <span class="badge" style="color:#d4d4d4; background:rgba(255,255,255,0.08);">low</span>
+              </div>
+            </section>
+            <section class="panel evidence" id="evidence">
+              <div class="panel-title">Evidence</div>
+              <div class="panel-subtitle">Selected finding shows exact context path</div>
+              <div class="source-card">
+                <div class="eyebrow">missing source</div>
+                <div style="margin-top:6px; font-size:13px; line-height:19px;">`reports/release.md` was generated after an agent session but has no cited source path.</div>
+              </div>
+              <div class="source-card">
+                <div class="eyebrow" style="color:#38bdf8;">touched by run</div>
+                <div class="mono" style="margin-top:6px; color:#d4d4d4; font-size:12px;">openclaw::release-demo</div>
+              </div>
+            </section>
+          </div>
+          <section class="panel health-strip">
+            <div>
+              <div class="metric-label">Workspace health</div>
+              <div class="metric-value" id="healthValue">72</div>
+            </div>
+            <div>
+              <div class="progress"><div id="progress" class="progress-fill"></div></div>
+              <div class="panel-subtitle" style="margin-top:9px;">Review queue narrows as evidence is attached.</div>
+            </div>
+            <div id="fixButton" class="fix-button">Attach source</div>
+          </section>
+        </main>
+      </div>
+      <div class="caption"><strong>Audit local context before agents rely on it.</strong><span>Broken, stale, and unsupported context stays visible.</span></div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.from(".issue", { opacity: 0, x: -18, duration: 0.28, stagger: 0.16 }, 0.5)
+        .to("#issue2", { scale: 1.02, duration: 0.25 }, 1.65)
+        .to("#issue2", { className: "issue selected", duration: 0.01 }, 1.65)
+        .from("#evidence", { opacity: 0.45, x: 20, duration: 0.45 }, 1.9)
+        .to("#fixButton", { scale: 1.06, duration: 0.25, yoyo: true, repeat: 1 }, 3.1)
+        .to("#issue2", { opacity: 0.36, x: 26, duration: 0.45 }, 3.75)
+        .to("#progress", { width: "82%", duration: 0.9 }, 4.0)
+        .to("#healthValue", { innerText: 84, snap: { innerText: 1 }, duration: 0.9 }, 4.0)
+        .to("#issue1", { y: 0, borderColor: "rgba(96,165,250,0.34)", duration: 0.35 }, 4.7)
+        .to("#evidence", { borderColor: "rgba(16,185,129,0.42)", duration: 0.4, yoyo: true, repeat: 1 }, 5.2);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

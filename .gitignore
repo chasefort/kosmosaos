@@ -37,6 +37,7 @@ src/main/test-*.ts
 
 # Generated documentation media
 docs/screenshots/*.gif
+!docs/screenshots/github-demo-*.gif
 
 # Editor
 .vscode/

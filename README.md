@@ -31,6 +31,8 @@ npx kosmos-aos --port 8080
 npx kosmos-aos ./project --no-open
 ```
 
+![Kosmos local launch to trust overview](docs/screenshots/github-demo-launch-trust-overview.gif)
+
 **Requires Node.js 18+**
 
 - Website: [www.getkosmos.xyz](https://www.getkosmos.xyz)
@@ -53,6 +55,8 @@ npx kosmos-aos ./project --no-open
 
 ### Live Monitoring
 
+![Kosmos live agent activity to trace replay](docs/screenshots/github-demo-live-trace-replay.gif)
+
 ![Kosmos Live Monitoring](docs/screenshots/live-monitoring.svg)
 
 ### Trace Inspector
@@ -60,6 +64,8 @@ npx kosmos-aos ./project --no-open
 ![Kosmos Trace Inspector](docs/screenshots/trace-inspector.png)
 
 ### Context Audit
+
+![Kosmos context audit fix queue](docs/screenshots/github-demo-context-audit-fix-queue.gif)
 
 ![Kosmos Context Audit](docs/screenshots/context-audit.png)
 
