@@ -18,9 +18,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 20
           registry-url: https://registry.npmjs.org
-          package-manager-cache: false
 
       - name: Install root dependencies
         run: npm ci
@@ -52,6 +51,13 @@ jobs:
           else
             echo "exists=false" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Setup Node for trusted publishing
+        if: ${{ steps.npm-version.outputs.exists == 'false' }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
 
       - name: Publish to npm
         if: ${{ steps.npm-version.outputs.exists == 'false' }}
