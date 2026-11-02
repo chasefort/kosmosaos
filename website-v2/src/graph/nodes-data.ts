@@ -762,7 +762,7 @@ export function getPanelContent(id: string): string {
     case 'contact': return `
       <div class="ps">
         <div class="ps-label">About</div>
-        <div class="ps-text">Kosmos is built by an independent developer. Questions, feedback, feature requests, or just want to say hi? Reach out through the channels below — all messages are read.</div>
+        <div class="ps-text"><a href="https://www.frontierresearch.xyz/" class="founder-link">By Chase Fort, founder of Frontier Research</a><br>Questions, feedback, or feature requests? Use the channels below.</div>
       </div>
       <div class="ps">
         <div class="ps-label">Channels</div>

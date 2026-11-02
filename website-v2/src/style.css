@@ -499,3 +499,7 @@ button { background: none; border: none; cursor: pointer; font: inherit; color: 
   opacity: 0;
   animation: ps-term-type-in 0.4s ease-out forwards;
 }
+
+.founder-link { display: inline-flex; align-items: center; min-height: 44px; color: var(--k-text-secondary); font-size: 13px; text-decoration: none; text-underline-offset: 4px; }
+.founder-link:hover { text-decoration: underline; }
+.founder-link:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
